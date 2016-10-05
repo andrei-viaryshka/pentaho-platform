@@ -66,6 +66,9 @@ public class PentahoSystemDatabaseDialectProvider implements IDatabaseDialectPro
   }
 
   @Override public IDatabaseDialect getDialect( boolean usableOnly, IDatabaseType iDatabaseType ) {
+    if ( iDatabaseType == null ) {
+      return null;
+    }
     return getDialectStream( usableOnly, iDatabaseType ).findFirst().orElse( null );
   }
 }

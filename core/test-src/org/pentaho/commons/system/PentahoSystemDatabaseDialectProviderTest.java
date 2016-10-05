@@ -115,4 +115,10 @@ public class PentahoSystemDatabaseDialectProviderTest {
       pentahoSystemDatabaseDialectProvider.getDialect( false, unusableIDialectType ) );
     assertNull( pentahoSystemDatabaseDialectProvider.getDialect( false, mock( IDatabaseType.class ) ) );
   }
+
+  @Test
+  public void testGetDialectByNullDBType() throws Exception {
+    assertNull( pentahoSystemDatabaseDialectProvider.getDialect( true, null ) );
+    assertNull( pentahoSystemDatabaseDialectProvider.getDialect( true, null ) );
+  }
 }
